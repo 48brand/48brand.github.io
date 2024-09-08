@@ -1,0 +1,77 @@
+body {
+    font-family: 'Raleway', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #333;
+    background: #f4f4f4;
+}
+
+.header {
+    background: url('https://images.unsplash.com/photo-1530427083476-34b080c8aaf1?ixid=MnwxMjA3Njh8MHwxfGFsbHwxfHx8fHx8fHx8fDE2NzkwMzM1MTI&ixlib=rb-1.2.1&h=750') no-repeat center center/cover;
+    color: #fff;
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.header .hero {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.header h1 {
+    font-size: 3em;
+    margin: 0;
+}
+
+.header p {
+    font-size: 1.5em;
+    margin: 10px 0 0;
+}
+
+.social-media {
+    text-align: center;
+    padding: 50px 20px;
+    background: #f7f7f7;
+}
+
+.social-media h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+    margin: 10px;
+    padding: 10px;
+    text-decoration: none;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    color: #333;
+    transition: background 0.3s, transform 0.3s;
+}
+
+.social-link img {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+}
+
+.social-link:hover {
+    background: #f0f0f0;
+    transform: scale(1.05);
+}
+
+.social-link:active {
+    background: #e0e0e0;
+}
