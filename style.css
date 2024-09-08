@@ -1,3 +1,4 @@
+/* General Styles */
 body {
     font-family: 'Raleway', sans-serif;
     margin: 0;
@@ -7,62 +8,83 @@ body {
     background: #f4f4f4;
 }
 
-.header {
-    background: url('https://images.unsplash.com/photo-1530427083476-34b080c8aaf1?ixid=MnwxMjA3Njh8MHwxfGFsbHwxfHx8fHx8fHx8fDE2NzkwMzM1MTI&ixlib=rb-1.2.1&h=750') no-repeat center center/cover;
-    color: #fff;
+header.header {
+    position: relative;
+    height: 100vh;
+    background: url('media/wallpaper/vintage.webp') no-repeat center center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-align: center;
-    padding: 100px 20px;
+    color: white;
+    overflow: hidden;
+    flex-direction: column;
 }
 
-.header .hero {
-    max-width: 600px;
-    margin: 0 auto;
+header .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85); /* Ajusta la opacidad aquí */
+    z-index: 1;
 }
 
-.header h1 {
-    font-size: 3em;
+header .hero {
+    position: relative;
+    z-index: 2; /* Para que el texto esté por encima del overlay */
+}
+
+/* Animaciones Dinámicas */
+.hero-title {
+    font-size: 6em;
     margin: 0;
+    letter-spacing: 2px;
+    opacity: 0;
+    animation: fadeInText 2s ease-in-out forwards;
 }
 
-.header p {
+.hero-subtitle {
     font-size: 1.5em;
-    margin: 10px 0 0;
+    margin-top: 10px;
+    opacity: 0;
+    animation: fadeInText 2.5s ease-in-out forwards;
+    animation-delay: 1s;
 }
 
 .social-media {
-    text-align: center;
-    padding: 50px 20px;
-    background: #f7f7f7;
-}
-
-.social-media h2 {
-    font-size: 2em;
-    margin-bottom: 20px;
+    margin-top: 20px;
+    opacity: 0;
+    animation: fadeInText 3s ease-in-out forwards;
+    animation-delay: 2s;
 }
 
 .social-links {
     display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+    flex-direction: column; /* Cambiado a columna para apilar los elementos */
+    align-items: center; /* Centra los elementos */
+    gap: 20px;
 }
 
+/* Estilos para las Redes Sociales */
 .social-link {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 200px;
-    margin: 10px;
-    padding: 10px;
+    width: 180px;
+    padding: 15px;
     text-decoration: none;
     background: #fff;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 1);
     color: #333;
-    transition: background 0.3s, transform 0.3s;
+    transition: transform 0.3s ease, background 0.3s ease;
+    font-size: 1.2em;
 }
 
 .social-link img {
-    width: 30px;
+    width: 30px;    
     height: 30px;
     margin-right: 10px;
 }
@@ -74,4 +96,83 @@ body {
 
 .social-link:active {
     background: #e0e0e0;
+}
+
+/* Animación para aparecer los elementos */
+@keyframes fadeInText {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Estilos para el Footer */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+footer p {
+    margin: 0;
+    font-size: 1em;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    header .hero-title {
+        font-size: 3em;
+    }
+
+    header .hero-subtitle {
+        font-size: 1.2em;
+    }
+
+    .social-link {
+        width: 150px;
+    }
+
+    .social-link img {
+        width: 25px;
+        height: 25px;
+    }
+
+}
+
+/* Estilo para la sección de "Contáctanos" */
+.contact-hero {
+    font-family: 'Raleway', sans-serif;
+    position: relative;
+    z-index: 2;
+    max-width: 800px; /* Ancho del contenedor del mensaje */
+    width: 100%;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    backdrop-filter: blur(10px); /* Efecto de desenfoque */
+    text-align: center;
+    margin: 0 auto;
+    color: white;
+}
+
+.contact-title {
+    font-size: 3em;
+    margin-bottom: 20px;
+}
+
+.contact-message {
+    font-size: 1.5em;
+}
+
+.contact-message a {
+    color: #fff;
+    text-decoration: underline;
 }
